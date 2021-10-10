@@ -1,6 +1,9 @@
-const text = document.querySelector('.article-text');
-console.log(text.textContent);
+const form = document.querySelector(".register-form");
 
-const title = document.querySelector('.article-title');
-title.textContent = 'Welcome to Bahamas!';
-console.log(title.textContent);
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const {
+    elements: { username, password }
+  } = event.currentTarget;
+  console.log(username.value, password.value);
+});
