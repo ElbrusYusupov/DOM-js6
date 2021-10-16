@@ -35,19 +35,20 @@
 //     keypressCounter += 1;
 // }
 
-const select = document.querySelector(".pizza-select");
-const textOutput = document.querySelector(".text-output");
-const valueOutput = document.querySelector(".value-output");
+const listWithId = document.querySelector('#menu');
+listWithId.style.textTransform = 'uppercase';
+listWithId.style.fontSize = '24px';
+// console.log(listWithId);
 
-setOutput();
+const listWithClass = document.querySelector('.menu');
+// console.log(listWithClass);
 
-select.addEventListener("change", setOutput);
+const menuItemsByTagName = document.querySelectorAll("li");
+console.log(menuItemsByTagName);
 
-function setOutput() {
-  const selectedOptionValue = select.value;
-  const selectedOptionIndex = select.selectedIndex;
-  const selectedOptionText = select.options[selectedOptionIndex].text;
+const menuItemsByClass = document.querySelectorAll(".menu-item");
+// console.log(menuItemsByClass);
 
-  textOutput.textContent = selectedOptionText;
-  valueOutput.textContent = selectedOptionValue;
-}
+const firstMenuItem = document.querySelector(".menu-item");
+firstMenuItem.style.color = 'tomato';
+// console.log(firstMenuItem);

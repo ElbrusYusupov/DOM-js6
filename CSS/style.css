@@ -52,10 +52,3 @@ button {
   font-family: inherit;
   text-transform: uppercase;
 } */
-body {
-  margin: 16px;
-}
-
-select {
-  padding: 4px;
-}
