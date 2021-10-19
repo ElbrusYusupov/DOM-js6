@@ -35,14 +35,26 @@
 //     keypressCounter += 1;
 // }
 
-const message = document.querySelector("#message");
-console.log(message.value); // Default textarea message
 
-//===================================================
-const activeLink = document.querySelector(".btn.active");
-console.log(activeLink.href); // https://s.codepen.io/about
+// Свойство classList_________________________________________________________________________________________________________________________________
+/*
+В свойстве classList хранится объект с методами для работы с классами элемента.
 
-//===================================================
-const image = document.querySelector(".image");
-console.log(image.src); // https://placeimg.com/640/480/animals
-image.src = 'https://placeimg.com/640/480/tech';
+elem.classList.contains(cls) - возвращает true или false в зависимости от того, есть ли у элемента класс cls.
+elem.classList.add(cls) - добавляет класс cls в список классов элемента.
+elem.classList.remove(cls) - удаляет класс cls из списка классов элемента.
+elem.classList.toggle(cls) - если класса cls нет, то добавляет его, если есть, наоборот удаляет.
+elem.classList.replace(oldClass, newClass) - заменяет существующий класс oldClass на указанный newClass.
+*/
+
+const text = document.querySelector('#paragraph');
+console.log(text.classList);
+console.log(text.classList.contains('red'));
+text.classList.remove('big')
+console.log(text.classList);
+
+text.classList.add('new-class')
+console.log(text.classList);
+
+
+// /Свойство classList_________________________________________________________________________________________________________________________________
