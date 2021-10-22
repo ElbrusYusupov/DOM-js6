@@ -45,16 +45,26 @@ elem.classList.add(cls) - добавляет класс cls в список кл
 elem.classList.remove(cls) - удаляет класс cls из списка классов элемента.
 elem.classList.toggle(cls) - если класса cls нет, то добавляет его, если есть, наоборот удаляет.
 elem.classList.replace(oldClass, newClass) - заменяет существующий класс oldClass на указанный newClass.
-*/
+*/ // /Свойство classList_________________________________________________________________________________________________________________________________
 
-const saveBtn = document.querySelector('.editor button[data-action="save"]');
-const closeBtn = document.querySelector('.editor button[data-action="close"]');
+/* for task #1_________________________________________________________________________________________________________________________________________
+const technologies = ["HTML", "CSS", "JavaScript", "React", "Node"];
+const list = document.querySelector('.list');
 
-console.log(saveBtn.dataset.action); //save
-console.log(closeBtn.dataset.action); //close
+const markup = technologies.map((technology) => `<li class="list-item">${technology}</li>`).join("");
 
-const dishes = document.querySelectorAll(".dishes > li");
-dishes.forEach((dish) => {
-  console.log(dish.dataset.id);
-});
-// /Свойство classList_________________________________________________________________________________________________________________________________
+console.log(markup);
+
+list.innerHTML = markup
+*/ //for task #1_________________________________________________________________________________________________________________________________________
+
+
+
+const list = document.querySelector('.list');
+
+const newTechnologies = ["React", "TypeScript", "Node.js"];
+
+const markup = newTechnologies.map((newTechnology) => `<li class="list-item new">${newTechnology}</li>`).join("");
+
+list.insertAdjacentHTML('beforeend', markup);
+list.insertAdjacentHTML("beforebegin", "<h2>Popular technologies</h2>")
