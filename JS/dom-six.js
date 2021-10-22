@@ -47,14 +47,14 @@ elem.classList.toggle(cls) - если класса cls нет, то добавл
 elem.classList.replace(oldClass, newClass) - заменяет существующий класс oldClass на указанный newClass.
 */
 
-const text = document.querySelector('#paragraph');
-console.log(text.classList);
-console.log(text.classList.contains('red'));
-text.classList.remove('big')
-console.log(text.classList);
+const saveBtn = document.querySelector('.editor button[data-action="save"]');
+const closeBtn = document.querySelector('.editor button[data-action="close"]');
 
-text.classList.add('new-class')
-console.log(text.classList);
+console.log(saveBtn.dataset.action); //save
+console.log(closeBtn.dataset.action); //close
 
-
+const dishes = document.querySelectorAll(".dishes > li");
+dishes.forEach((dish) => {
+  console.log(dish.dataset.id);
+});
 // /Свойство classList_________________________________________________________________________________________________________________________________
