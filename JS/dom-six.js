@@ -46,7 +46,6 @@ elem.classList.remove(cls) - удаляет класс cls из списка к�
 elem.classList.toggle(cls) - если класса cls нет, то добавляет его, если есть, наоборот удаляет.
 elem.classList.replace(oldClass, newClass) - заменяет существующий класс oldClass на указанный newClass.
 */ // /Свойство classList_________________________________________________________________________________________________________________________________
-
 /* for task #1_________________________________________________________________________________________________________________________________________
 const technologies = ["HTML", "CSS", "JavaScript", "React", "Node"];
 const list = document.querySelector('.list');
@@ -58,13 +57,42 @@ console.log(markup);
 list.innerHTML = markup
 */ //for task #1_________________________________________________________________________________________________________________________________________
 
+const div = document.querySelector('.collection')
+
+const makeBtn = document.createElement('button')
+makeBtn.classList.add("my-button")
+makeBtn.setAttribute('type', 'button')
+makeBtn.style.backgroundColor = "teal"
+makeBtn.style.fontSize = "24px"
+makeBtn.textContent = "Я кнопка"
+
+div.append(makeBtn)
 
 
-const list = document.querySelector('.list');
 
-const newTechnologies = ["React", "TypeScript", "Node.js"];
+const handleClick = (event) => {
+  console.log("event: ", event);
+  console.log("event type: ", event.type);
+  console.log("currentTarget: ", event.currentTarget);
+};
 
-const markup = newTechnologies.map((newTechnology) => `<li class="list-item new">${newTechnology}</li>`).join("");
+makeBtn.addEventListener("click", handleClick);
 
-list.insertAdjacentHTML('beforeend', markup);
-list.insertAdjacentHTML("beforebegin", "<h2>Popular technologies</h2>")
+
+const form = document.querySelector(".form");
+
+form.addEventListener("submit", handleSubmit);
+
+function handleSubmit(event) {
+  event.preventDefault();
+  const {
+    elements: { login, password }
+  } = event.currentTarget;
+
+  if (login.value === "" || password.value === "") {
+    return console.log("Please fill in all the fields!");
+  }
+
+  console.log(`Login: ${login.value}, Password: ${password.value}`);
+  event.currentTarget.reset();
+}
