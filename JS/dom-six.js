@@ -70,29 +70,29 @@ div.append(makeBtn)
 
 
 
-const handleClick = (event) => {
-  console.log("event: ", event);
-  console.log("event type: ", event.type);
-  console.log("currentTarget: ", event.currentTarget);
-};
 
-makeBtn.addEventListener("click", handleClick);
+const startBtn = document.querySelector('.js-start')
+const stopBtn = document.querySelector('.js-stop')
+let timerId = null;
+
+startBtn.addEventListener('click', () => {
+  timerId = setInterval(() => {
+    console.log(`I love async JS! ${Math.random()}`);
+  }, 1000)
+})
+
+stopBtn.addEventListener('click', () => {
+  clearInterval(timerId);
+  console.log(`Interval with ID ${timerId} has stopped!`);
+})
 
 
-const form = document.querySelector(".form");
 
-form.addEventListener("submit", handleSubmit);
+const date = new Date("March 16, 2030 14:25:00");
 
-function handleSubmit(event) {
-  event.preventDefault();
-  const {
-    elements: { login, password }
-  } = event.currentTarget;
+date.setMinutes(50);
 
-  if (login.value === "" || password.value === "") {
-    return console.log("Please fill in all the fields!");
-  }
+// date.setFullYear(2040, 4, 8);
 
-  console.log(`Login: ${login.value}, Password: ${password.value}`);
-  event.currentTarget.reset();
-}
+
+console.log(date);
